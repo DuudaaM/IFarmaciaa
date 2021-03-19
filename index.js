@@ -8,6 +8,8 @@ async function sincronizar(){
 
 async function inserir(){
 Farmaceutico.create({nome:"Carla"})
+Farmaceutico.create({email:})
+Farmaceutico.create({senha:})
 }
 
 async function consultar(){
@@ -49,8 +51,9 @@ async function sincronizar(){
 }
 
 async function inserir(){
-Medicamento.create({nome:"Carla"})
-}
+Medicamento.create({nome:})
+Medicamento.create({quantidade:}
+Medicamento.create({nome:}))}
 
 async function consultar(){
   const farmaceutico = Farmaceutico.findAll();
