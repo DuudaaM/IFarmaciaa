@@ -1,11 +1,16 @@
 const Sequelize= require("sequelize");
-const RouteGeneric = require('./routes/RouteGeneric')
-const ServiceGeneric = require('./service/ServiceGeneric')
+const Route = require('./routes/RouteGeneric')
+const Service = require('./service/ServiceGeneric')
 const db = require("./db");
 const cors = require('cors');
 const express = require("express");
 const Farmaceutico = require("./model/Farmaceutico")
+const Farmacia = require("./model/Farmacia")
+const Medicamento = require("./model/Medicamento")
+const Medico = require("./model/Medico")
+const Paciente = require("./model/Paciente")
 
+/*
 async function sincronizar(){
   await db.sync();
 }
@@ -21,45 +26,19 @@ async function consultar(){
   console.log(farmaceutico)
 }
 
+
 sincronizar();
 inserir();
 consultar();
 
-const Sequelize= require("sequelize");
-const RouteGeneric = require('./routes/RouteGeneric')
-const ServiceGeneric = require('./service/ServiceGeneric')
-const db = require("./db");
-const cors = require('cors');
-const express = require("express");
-const Farmacia = require("./model/Farmacia")
-
-async function sincronizar(){
-  await db.sync();
-}
 
 async function inserir(){
-Farmacia.create(receita:"xxxx durante y dias, z vezes ao dia")
+Farmacia.create({receita:"xxxx durante y dias, z vezes ao dia"})
 }
 
 async function consultar(){
   const farmacia = Farmacia.findAll();
   console.log(farmacia)
-}
-
-sincronizar();
-inserir();
-consultar();
-
-const Sequelize= require("sequelize");
-const RouteGeneric = require('./routes/RouteGeneric')
-const ServiceGeneric = require('./service/ServiceGeneric')
-const db = require("./db");
-const cors = require('cors');
-const express = require("express");
-const Medicamento = require("./model/Medicamento")
-
-async function sincronizar(){
-  await db.sync();
 }
 
 async function inserir(){
@@ -72,21 +51,6 @@ async function consultar(){
   console.log(medicamento)
 }
 
-sincronizar();
-inserir();
-consultar();
-
-const Sequelize= require("sequelize");
-const RouteGeneric = require('./routes/RouteGeneric')
-const ServiceGeneric = require('./service/ServiceGeneric')
-const db = require("./db");
-const cors = require('cors');
-const express = require("express");
-const Medico = require("./model/Medico")
-
-async function sincronizar(){
-  await db.sync();
-}
 
 async function inserir(){
 Medico.create({nome:"Carlos"}),
@@ -100,23 +64,6 @@ async function consultar(){
   console.log(medico)
 }
 
-sincronizar();
-inserir();
-consultar();
-
-
-const Sequelize= require("sequelize");
-const RouteGeneric = require('./routes/RouteGeneric')
-const ServiceGeneric = require('./service/ServiceGeneric')
-const db = require("./db");
-const cors = require('cors');
-const express = require("express");
-const Paciente = require("./model/Paciente")
-
-async function sincronizar(){
-  await db.sync();
-}
-
 async function inserir(){
 Paciente.create({nome:"Clara"})
 Paciente.create({numero_SUS:2343616000})
@@ -128,11 +75,22 @@ async function consultar(){
   const paciente = Paciente.findAll();
   console.log(paciente)
 }
+*/
 
-sincronizar();
-inserir();
-consultar();
+const app = express();
 
-Route("/")
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+    res.send('API de Farmácia ativa!!!')
+});
 
+Route("/farmaceutico",app,new Service(Farmaceutico));
+Route("/farmacia",app,new Service(Farmacia));
+Route("/medicamento",app,new Service(Medicamento));
+Route("/medico",app,new Service(Medico));
+Route("/paciente",app,new Service(Paciente));
+
+app.listen(3000, () => console.log("Servidor iniciado!"));

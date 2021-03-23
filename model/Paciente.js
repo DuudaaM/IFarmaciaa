@@ -1,11 +1,9 @@
 const {Sequelize, DataTypes} = require("sequelize");
-const cors = require('cors');
-const express = require("express");
 const db = require("../db");
 
 
 
-const Paciente = db.define("Paciente"),
+const Paciente = db.define("Paciente",
     {
          id: {
             type: DataTypes.INTEGER,
