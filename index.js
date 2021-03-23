@@ -133,6 +133,6 @@ sincronizar();
 inserir();
 consultar();
 
-ROU
+Route("/")
 
 
