@@ -1,4 +1,6 @@
-const {Sequilize, DataTypes} = require("sequilize");
+const {Sequelize, DataTypes} = require("sequelize");
+const cors = require('cors');
+const express = require("express");
 const db = require("../db");
 
 

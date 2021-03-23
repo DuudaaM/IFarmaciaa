@@ -1,5 +1,9 @@
-const Sequilize = require("sequilize");
+const Sequelize= require("sequelize");
+const RouteGeneric = require('./routes/RouteGeneric')
+const ServiceGeneric = require('./service/ServiceGeneric')
 const db = require("./db");
+const cors = require('cors');
+const express = require("express");
 const Farmaceutico = require("./model/Farmaceutico")
 
 async function sincronizar(){
@@ -21,8 +25,12 @@ sincronizar();
 inserir();
 consultar();
 
-const Sequilize = require("sequilize");
+const Sequelize= require("sequelize");
+const RouteGeneric = require('./routes/RouteGeneric')
+const ServiceGeneric = require('./service/ServiceGeneric')
 const db = require("./db");
+const cors = require('cors');
+const express = require("express");
 const Farmacia = require("./model/Farmacia")
 
 async function sincronizar(){
@@ -42,8 +50,12 @@ sincronizar();
 inserir();
 consultar();
 
-const Sequilize = require("sequilize");
+const Sequelize= require("sequelize");
+const RouteGeneric = require('./routes/RouteGeneric')
+const ServiceGeneric = require('./service/ServiceGeneric')
 const db = require("./db");
+const cors = require('cors');
+const express = require("express");
 const Medicamento = require("./model/Medicamento")
 
 async function sincronizar(){
@@ -64,8 +76,12 @@ sincronizar();
 inserir();
 consultar();
 
-const Sequilize = require("sequilize");
+const Sequelize= require("sequelize");
+const RouteGeneric = require('./routes/RouteGeneric')
+const ServiceGeneric = require('./service/ServiceGeneric')
 const db = require("./db");
+const cors = require('cors');
+const express = require("express");
 const Medico = require("./model/Medico")
 
 async function sincronizar(){
@@ -89,8 +105,12 @@ inserir();
 consultar();
 
 
-const Sequilize = require("sequilize");
+const Sequelize= require("sequelize");
+const RouteGeneric = require('./routes/RouteGeneric')
+const ServiceGeneric = require('./service/ServiceGeneric')
 const db = require("./db");
+const cors = require('cors');
+const express = require("express");
 const Paciente = require("./model/Paciente")
 
 async function sincronizar(){
@@ -113,5 +133,6 @@ sincronizar();
 inserir();
 consultar();
 
+ROU
 
 
