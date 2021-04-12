@@ -1,7 +1,7 @@
 const {Sequelize, DataTypes} = require("sequelize");
 const db = require("../db");
 
-const Medicamento = db.define("Medicamento",
+const Estoque = db.define("Estoque",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -19,4 +19,4 @@ const Medicamento = db.define("Medicamento",
     }  
 );
 
-console.exports = Medicamento;
+module.exports = Estoque;

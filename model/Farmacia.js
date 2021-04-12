@@ -14,4 +14,4 @@ const Farmacia = db.define("Farmacia",
     }      
 );
 
-console.exports = Farmacia;
+module.exports = Farmacia;
