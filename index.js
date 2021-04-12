@@ -10,6 +10,7 @@ const Estoque = require("./model/Estoque")
 const Medico = require("./model/Medico")
 const Paciente = require("./model/Paciente")
 const Receita = require("./model/Receita")
+const ReceitaMedicamento = require("./model/ReceitaMedicamento")
 
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -96,6 +97,7 @@ Route("/estoque",app,new Service(Estoque),  authorization);
 Route("/medico",app,new Service(Medico),  authorization);
 Route("/paciente",app,new Service(Paciente),  authorization);
 Route("/receita",app,new Service(Receita),  authorization);
+Route("/receitaMedicamento",app,new Service(ReceitaMedicamento),  authorization);
 
 
 app.get("/estoque/:id/nome", async (req, res) => {
