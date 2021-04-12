@@ -1,6 +1,7 @@
 const {Sequelize, DataTypes} = require("sequelize");
 const db = require("../db");
 const Medico = require("./Medico");
+const Paciente = require("./Paciente");
 
 const Receita = db.define("Receita",
 {
@@ -17,5 +18,7 @@ const Receita = db.define("Receita",
 
 Receita.belongsTo(Medico);
 Medico.hasMany(Receita, {as:"receitas"});
+Receita.belongsTo(Paciente);
+Paciente.hasMany(Receita, {as:"receitas"});
 
 module.exports = Receita;
